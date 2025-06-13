@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston Housing Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Boston Housing Price Prediction</h2>
+
+    <form action="/predict" method="post">
+        <label>CRIM:</label><br>
+        <input type="text" name="CRIM"><br>
+
+        <label>INDUS:</label><br>
+        <input type="text" name="INDUS"><br>
+
+        <label>NOX:</label><br>
+        <input type="text" name="NOX"><br>
+
+        <label>RM:</label><br>
+        <input type="text" name="RM"><br>
+
+        <label>AGE:</label><br>
+        <input type="text" name="AGE"><br>
+
+        <label>TAX:</label><br>
+        <input type="text" name="TAX"><br>
+
+        <label>PTRATION:</label><br>
+        <input type="text" name="PTRATION"><br>
+
+        <label>LSTAT:</label><br>
+        <input type="text" name="LSTAT"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
